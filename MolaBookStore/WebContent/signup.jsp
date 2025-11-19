@@ -8,6 +8,7 @@
 	<meta charset="UTF-8">
 	<title>Sign Up – Mola Book Store</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 	<style>
 		:root { --primary: #5c6bc0; --muted: #6c757d; --card-bg: #fff; --radius: 10px; }
 		html,body{height:100%;}
@@ -32,7 +33,9 @@
 					<label for="password" class="form-label">Password</label>
 					<div class="input-group">
 						<input type="password" id="password" name="password" class="form-control" required />
-						<button type="button" class="btn btn-outline-secondary" id="toggleSignupPwd">Show</button>
+						<button type="button" class="btn btn-outline-secondary" id="toggleSignupPwd" aria-label="Show password">
+							<i id="toggleSignupIcon" class="bi bi-eye-fill" aria-hidden="true"></i>
+						</button>
 					</div>
 					<div class="invalid-feedback">Please provide a password (min 6 chars).</div>
 				</div>
@@ -51,8 +54,19 @@
 		const username = document.getElementById('username');
 		const password = document.getElementById('password');
 		const toggle = document.getElementById('toggleSignupPwd');
+		const icon = document.getElementById('toggleSignupIcon');
 		toggle.addEventListener('click', ()=>{
-			if(password.type==='password'){password.type='text'; toggle.textContent='Hide';} else {password.type='password'; toggle.textContent='Show';}
+			if(password.type==='password'){
+				password.type='text';
+				icon.classList.remove('bi-eye-fill');
+				icon.classList.add('bi-eye-slash-fill');
+				toggle.setAttribute('aria-label','Hide password');
+			} else {
+				password.type='password';
+				icon.classList.remove('bi-eye-slash-fill');
+				icon.classList.add('bi-eye-fill');
+				toggle.setAttribute('aria-label','Show password');
+			}
 		});
 		form.addEventListener('submit', function(e){
 			let valid=true;
