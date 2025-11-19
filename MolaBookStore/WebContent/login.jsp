@@ -74,8 +74,8 @@
                 <label for="password" class="form-label">Password</label>
                 <div class="input-group">
                     <input type="password" id="password" name="password" class="form-control" required aria-required="true" />
-                    <button type="button" class="btn btn-outline-secondary" id="togglePassword" aria-label="Show password">
-                        <i id="toggleIcon" class="bi bi-eye-fill" aria-hidden="true"></i>
+                    <button type="button" class="btn btn-outline-secondary pw-toggle-btn" id="togglePassword" aria-label="Show password">
+                        <i id="toggleIcon" class="bi bi-eye-fill pw-toggle-icon" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div class="invalid-feedback">Please enter your password.</div>
@@ -145,6 +145,12 @@
         });
     })();
 </script>
+
+<style>
+    /* Small visual polish for password toggle */
+    .pw-toggle-btn { padding: 0.28rem 0.45rem; border-radius: 0 6px 6px 0; }
+    .pw-toggle-icon { font-size: 0.95rem; line-height: 1; }
+</style>
 
 </body>
 </html>

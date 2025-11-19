@@ -33,8 +33,8 @@
 					<label for="password" class="form-label">Password</label>
 					<div class="input-group">
 						<input type="password" id="password" name="password" class="form-control" required />
-						<button type="button" class="btn btn-outline-secondary" id="toggleSignupPwd" aria-label="Show password">
-							<i id="toggleSignupIcon" class="bi bi-eye-fill" aria-hidden="true"></i>
+						<button type="button" class="btn btn-outline-secondary pw-toggle-btn" id="toggleSignupPwd" aria-label="Show password">
+							<i id="toggleSignupIcon" class="bi bi-eye-fill pw-toggle-icon" aria-hidden="true"></i>
 						</button>
 					</div>
 					<div class="invalid-feedback">Please provide a password (min 6 chars).</div>
