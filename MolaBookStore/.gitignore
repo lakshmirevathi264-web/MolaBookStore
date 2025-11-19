@@ -1,0 +1,15 @@
+# Build and runtime artifacts
+/target/
+/tomcat/
+*.war
+*.class
+
+# Database files (if you want to keep the DB committed, remove this)
+# WebContent/WEB-INF/molabookstore.db
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
